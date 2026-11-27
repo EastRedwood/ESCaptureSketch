@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ESCaptureSketch</AssemblyName>
+    <RootNamespace>ESCaptureSketch</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>assets\app.ico</ApplicationIcon>
+    <NoWarn>$(NoWarn);WFO0003;WPF0001</NoWarn>
+    <!-- 버전은 주.부.빌드번호. 빌드 번호는 .build_number 에서 읽으므로 손으로 고치지 않는다 (window\CLAUDE.md "버전 표시"). -->
+    <VersionMajorMinor>1.0</VersionMajorMinor>
+    <BuildNumber>0</BuildNumber>
+    <BuildNumber Condition="Exists('$(MSBuildProjectDirectory)\.build_number')">$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)\.build_number').Trim())</BuildNumber>
+    <Version>$(VersionMajorMinor).$(BuildNumber)</Version>
+    <Product>ESCaptureSketch</Product>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>false</TieredPGO>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 창 왼쪽 위 아이콘과 트레이 아이콘으로도 쓴다 (exe 아이콘은 ApplicationIcon). -->
+    <Resource Include="assets\app.ico" />
+    <!-- 캡처 소리 (CC BY 4.0, THIRD-PARTY-NOTICES.md) -->
+    <EmbeddedResource Include="assets\camera_snap1.wav" LogicalName="shutter.wav" />
+    <!-- 사용 설명서: 실행 파일 옆에 `설명서.txt` 로 함께 내보내고, 파일이 없을 때를 위해 실행 파일에도 넣는다. -->
+    <EmbeddedResource Include="Manual.txt" LogicalName="Manual.txt" />
+    <None Remove="Manual.txt" />
+    <None Include="Manual.txt" Link="설명서.txt" TargetPath="설명서.txt" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Manual.en.txt" LogicalName="Manual.en.txt" WithCulture="false" />
+    <None Remove="Manual.en.txt" />
+    <None Include="Manual.en.txt" Link="manual-en.txt" TargetPath="manual-en.txt" CopyToOutputDirectory="PreserveNewest" />
+    <!-- 설치 안내와 정리용 배치 파일(자동 시작·파일 연결 삭제): 받는 사람에게 함께 가야 한다. -->
+    <None Update="READ-ME-FIRST.txt;ESCaptureSketch-RemoveAutostart.bat;ESCaptureSketch-RemoveFileType.bat" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <!-- 라이선스: 배포할 때 실행 파일과 함께 있어야 한다. -->
+    <None Update="LICENSE;THIRD-PARTY-NOTICES.md;licenses\*.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="SkiaSharp" Version="3.119.1" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="3.119.1" />
+  </ItemGroup>
+  <!-- .escs 연결이 켜져 있으면 빌드 직후 실행 파일 경로를 고친다 (옛 빌드가 열리지 않게). *_wpftmp 임시 프로젝트는 제외. -->
+  <Target Name="RefreshFileTypeAfterBuild" AfterTargets="Build" Condition="'$(MSBuildProjectName)' == 'ESCaptureSketch' And '$(SkipShellRegister)' != 'true' And Exists('$(TargetDir)$(AssemblyName).exe')">
+    <Exec Command="&quot;$(TargetDir)$(AssemblyName).exe&quot; --register" ContinueOnError="true" IgnoreExitCode="true" />
+  </Target>
+</Project>

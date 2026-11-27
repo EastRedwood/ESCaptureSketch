@@ -1,0 +1,37 @@
+ESCaptureSketch
+
+[한국어]
+설치
+1. 압축을 원하는 폴더에 모두 풉니다.
+2. .NET 10 데스크톱 런타임(x64)이 없으면 설치합니다: https://dotnet.microsoft.com/download/dotnet/10.0
+3. ESCaptureSketch.exe 를 실행합니다. 트레이(알림 영역)에 아이콘이 생기고, Ctrl+Shift+S 로 캡처합니다.
+
+알아 두실 것
+- 서명하지 않은 프로그램이라 Windows의 "PC 보호"(SmartScreen) 화면이 뜰 수 있습니다. 믿고 실행하려면 "추가 정보" > "실행"을 누릅니다.
+- 처음 실행하면 Windows 시작 시 자동 실행 여부를 묻습니다.
+- .escs 파일이 이 프로그램에 연결됩니다. 설정 > 시스템·캡쳐에서 끌 수 있습니다.
+- 설정과 로그는 %AppData%\ESCaptureSketch 에 저장됩니다.
+
+삭제
+1. 트레이 아이콘 우클릭 > 종료
+2. ESCaptureSketch-RemoveAutostart.bat 실행 (자동 시작 해제)
+3. ESCaptureSketch-RemoveFileType.bat 실행 (.escs 연결 해제)
+4. 프로그램 폴더를 지웁니다. 설정까지 지우려면 %AppData%\ESCaptureSketch 폴더도 지웁니다.
+
+[English]
+Install
+1. Unzip everything into a folder of your choice.
+2. If you do not have the .NET 10 Desktop Runtime (x64), install it: https://dotnet.microsoft.com/download/dotnet/10.0
+3. Run ESCaptureSketch.exe. An icon appears in the tray; press Ctrl+Shift+S to capture.
+
+Good to know
+- The program is not code-signed, so Windows SmartScreen may warn you. To run it, choose "More info" > "Run anyway".
+- On first run it asks whether to start with Windows.
+- .escs files are associated with the program. You can turn this off in Settings > System & capture.
+- Settings and logs are stored in %AppData%\ESCaptureSketch.
+
+Uninstall
+1. Right-click the tray icon > Exit
+2. Run ESCaptureSketch-RemoveAutostart.bat
+3. Run ESCaptureSketch-RemoveFileType.bat
+4. Delete the program folder. To remove settings too, delete %AppData%\ESCaptureSketch.

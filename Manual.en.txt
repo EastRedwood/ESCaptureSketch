@@ -1,0 +1,318 @@
+EScaptureSketch (East Speed CaptureSketch)
+
+1. Why this program exists
+
+EScaptureSketch was made to deliver information quickly: leave a note on the part you want and send it to other people, a notepad app, a web board or an AI.
+
+It is not meant to replace a graphics tool. Instead of advanced editing such as line opacity and filters, it aims for the following.
+
+◆ Easy-to-reach shortcuts for the main features
+- And, where possible, shortcuts you can change in settings
+
+◆ As few steps as possible for each feature
+- You should not have to pick a color and width again every time you want to draw one line
+
+◆ Uninterrupted actions
+- Draw a rectangle and go on drawing the next one without pressing "done"
+- Distractions such as Windows notifications can be turned off in settings
+
+
+2. Basic shortcuts and the capture menu
+
+Capture starts with Ctrl+Shift+S. The following menu appears at the top of the screen. Each item can be picked quickly with its number key. Rectangle is selected by default.
+
+1 | Rectangle
+2 | Window
+3 | Full screen
+4 | Whiteboard
+5 | Chalkboard
+F2 | Open file
+6 | Open editor after capture
+7 | Full screen after 3 seconds
+Esc | Close
+
+[Capture menu]
+
+◆ Rectangle (1)
+Drag an area to capture it and copy it to the clipboard. A Windows notification appears when it is copied.
+※ You can turn the notification off in the System & capture tab of Settings.
+
+◆ Window (2)
+Captures and copies the window highlighted under the mouse cursor.
+
+◆ Full screen (3)
+Captures the monitor where the cursor is.
+※ To capture all monitors, use window capture and move the cursor to the top-left corner (0,0) of the monitor: the whole screen gets selected.
+
+◆ Whiteboard (4)
+Opens an empty, endless whiteboard. The background follows the theme, and you can choose it in settings.
+- Use it to sketch a quick idea and pass it on.
+- Paste several images one after another with Ctrl+V for a running briefing. The laser tool is useful here.
+- With several images, keep pasted images and your sketches on separate layers. Otherwise erasing a sketch may erase the image too.
+- Adding a pin right after pasting a new image gives you a save point for clearing the sketches.
+
+◆ Chalkboard (5)
+Makes the canvas transparent so you can sketch over other windows. Useful when you need to explain something on screen quickly, without pausing a game, a video or a stream.
+- Hide all panels with F11. The laser tool goes well with this.
+- The F11 button at the top right can also be hidden completely in settings.
+- After sketching, press Shift+1 to return to the starting state (see the pin section). Use this to clear everything.
+- Press Ctrl+Shift+B (changeable in settings) to control other programs while the sketch stays. Press again to go back to sketching.
+- The Click-through button left of the F11 button does the same. While it is on, its background is blue and it can still be clicked.
+- The Click-through button stays when panels are hidden with F11 (at the right end if the Restore button is turned off). It can be hidden in Settings, General tab.
+※ The chalkboard does not work over exclusive full-screen programs. Use windowed or borderless windowed mode.
+
+◆ Open file (F2)
+Opens an image file. escs files can be opened too.
+
+◆ Open editor after capture (6)
+Normally rectangle and window captures after Ctrl+Shift+S only copy to the clipboard, because most captures need no sketching.
+- When you need to sketch capture after capture, turn this on. Until you turn it off, every rectangle or window capture opens straight in the editor.
+
+◆ Full screen after 3 seconds (7)
+Like full screen capture, but after a delay it captures the monitor where the cursor is. The delay can be changed in settings.
+- Use it for things that disappear when you press a key or move the mouse, for example the emoji panel opened with Win+.
+
+[Opening the clipboard image]
+
+◆ Paste into the editor (Ctrl+Shift+V)
+Opens the editor and pastes the image on the clipboard. Switching "Open editor after capture" on and off is a nuisance, so you usually capture and then press Ctrl+Shift+V.
+
+
+3. Top menu
+
+[Pins]
+
+Undo and redo history is unlimited. Shortcut labels would be less intuitive here, so only icons are shown.
+
+< Undo | Ctrl+Z, mouse 4 (lower side button)
+> Redo | Ctrl+Y, mouse 5 (upper side button)
+Number | Number of actions so far. Scroll over it to step up and down, or click and type a number to jump.
+>| Latest | Ctrl+mouse 5. Jump to the most recent state
+📌 Pin | Ctrl+mouse 4. Saves the current point as a numbered button
+
+◆ Using pins
+- Clicking adds a button with the current number on the right. Press it to return to that point.
+- Pins get Shift+1 and onward from left to right.
+- Pin 0 is the empty starting state, so it works as "clear all".
+- Right-click deletes a pin.
+※ A new branch of history deletes the old one. For example, if you have 50 steps, go back to 30 and draw something new, the steps after 30 are replaced by the new ones.
+
+[Tools]
+
+To keep actions uninterrupted, the program avoids moving things with the left button. Left-click means creating a new shape or starting a new action. Moving is done by wheel-dragging inside the blue edit box.
+
+Most tools follow the line width. Change it quickly with Shift+scroll wheel or in the right panel.
+
+Select | Tab
+Pen | Ctrl+1
+Highlighter | Ctrl+2
+Line | Ctrl+3
+Rectangle | Ctrl+4
+Ellipse | Ctrl+5
+Crop | Ctrl+6
+Laser | Alt+1
+Arrow | Alt+2
+Fit to screen | Alt+3
+Grid | Alt+4
+Marker | Alt+5
+Blur | Alt+6
+
+◆ Typing text
+Just type anywhere on the canvas and the text appears at the cursor. Drawing a line with the pen and adding a short note is the most basic way to pass information, so the pen is selected at start and text needs no menu.
+- The font is chosen in settings. There is only one, because switching fonts does not serve the purpose.
+- The line width alone would give very small text, so three things add up to the size.
+  - Text size = hidden offset (20) + settings offset (default 18) + line width
+  - While editing, change the line width to change the text size.
+  - Set the offset in settings to match your favorite size.
+- Shift+Enter makes a new line.
+- Text is finished with Enter, with right-click, or when you start new text outside the blue edit box.
+- Text on the clipboard can be pasted with Ctrl+V too.
+- Bold, strikethrough and underline are left out to keep things simple. Draw a line instead.
+
+◆ Erasing (right drag)
+Removes what you point at quickly. This is not a graphics tool, so it deletes whole objects only, not parts. Use the eraser or undo, whichever suits you.
+
+◆ Zoom and pan (wheel)
+- Scroll to zoom, wheel-drag to pan.
+- The zoom level is shown at the bottom left.
+
+◆ Select tool (Tab)
+Moves several texts and shapes at once.
+- With a single text selected, put the cursor over it and type to add to it.
+- Copy or cut the selection with Ctrl+C or Ctrl+X, and paste with Ctrl+V.
+
+◆ Pen (Ctrl+1)
+Draws lines.
+- Hold Shift for a straight line at any angle.
+- Hold Ctrl+Shift to snap to 15° steps.
+
+◆ Highlighter (Ctrl+2)
+Draws a thick, translucent line.
+- Hold Shift for a straight line at any angle.
+- Hold Ctrl+Shift to snap to 15° steps.
+
+◆ Line (Ctrl+3)
+Draws a straight line.
+- Any angle by default; hold Shift to snap to 15° steps.
+- Click and drag the end points to move the line.
+※ It overlaps with the pen's Shift feature and may be removed later. It is kept for first-time and mouse-only users.
+
+◆ Rectangle (Ctrl+4)
+Draws a rectangle over the area you drag.
+- Hold Shift to draw a square centered on where you started. This is handier for framing something.
+
+◆ Ellipse (Ctrl+5)
+Draws an ellipse over the area you drag.
+- Hold Shift to draw a circle centered on where you started.
+
+◆ Crop (Ctrl+6)
+Cuts out one part of the image to work on.
+Left drag | Select the area
+Wheel click | Confirm and crop
+Right-click | Cancel
+
+◆ Laser (Alt+1)
+Draws a line that disappears from its start after a few seconds.
+- Draws attention to a spot for someone watching the same screen, or during a chalkboard briefing.
+- The fixed color and width can be turned off in settings.
+※ From Ctrl+7 on, keys are hard to reach with one hand, so Alt shortcuts are used.
+
+◆ Arrow (Alt+2)
+Draws an arrow.
+- Any angle by default; hold Shift to snap to 15° steps.
+- Click and drag the end points to move it.
+
+◆ Fit to screen (Alt+3)
+Returns to the starting view and zooms so the whole image fits. Useful after zooming or panning far away.
+
+◆ Grid (Alt+4)
+Press the grid button, then drag the area to draw a grid on.
+- A grid usually covers a lot, so it goes on its own layer and does not get in the way of erasing other shapes.
+- To remove it, select its layer and right-click it, or press x next to it in the layer list. A grid you just made can also be undone.
+- Right after pressing the grid button, keys 1, 2, 3 pick the grid style in the right panel.
+- Hold Shift while dragging to get whole cells only, with no cut cells at the edges.
+
+Purpose | Draw a grid over an image to name positions. You can note a position on a map to explain later, ask someone to find a spot and answer with coordinates, or lay a grid over a program window and ask an AI where a menu is.
+Settings | Set the cell size and label size in settings. Color and width follow the current color and line width. You can also choose whether the row and column bars are included when copying.
+
+- Steps
+  - ① Choose the color and line width for the grid.
+  - ② Pick the grid style in the right panel (or with keys 1, 2, 3 right after pressing the grid button).
+  - ③ Press the grid button and drag the area on the canvas.
+  - ④ Check that the grid was added to the layer list.
+  - ⑤ Drag the ≡ icon to move the grid layer above or below your drawings. Layers higher in the list are drawn on top.
+
+◆ Marker (Alt+5)
+Stamps a marker.
+- Shortcuts: press Alt+5 or the tool button, then keys 1–6 pick the shape shown on the panel buttons. You can click them too.
+- Use: click to stamp a circle with the chosen symbol. Click and drag to add a tail that points at the exact spot.
+- Fill: click the fill box in the marker section, then pick a color from the palette. Automatic picks black or white, whichever is easier to see.
+- Numbers: start at 1 and go up by one with each click. Change the next number in the right panel, or scroll over it.
+- To go back to 1, press the "1" button in the top row of the marker section.
+- The preview above shows the marker currently selected.
+
+◆ Blur (Alt+6)
+Blurs the area you select.
+- Hold Ctrl to make a solid box instead.
+- Hold Shift to draw from the center.
+※ Blur gives only limited protection. Use the solid box when hiding anything sensitive.
+
+
+4. Presets and system buttons
+
+[Presets]
+
+A kind of favorites. Choosing color, width and tool again every time is tiring, so save them once and recall them with one click.
+
+- Set the color, width and tool you like, then press +. A new preset button appears.
+
+Double-click | Rename it. The default name is a number.
+Wheel click | Save the current color, width and tool to this button again.
+Right-click | Delete the button.
+F1, F2, F3, F4 | Select the presets from left to right.
+
+[System buttons]
+
+Open | Ctrl+O. Opens PNG, JPG or the program's own escs files. An escs file keeps the whole undo/redo history and the layers, so use it for work you will keep editing.
+Copy | Ctrl+C. Copies the canvas to the clipboard. A shutter sound can be turned on in settings.
+Save | Ctrl+S. For a temporary drawing it asks for a file name. For a drawing opened from a file or already saved (the name is shown at the top left), it keeps saving to that file. PNG, JPG and escs are available.
+Save as | Alt+S. Hidden for temporary drawings; appears once a file is opened or saved. Saves under a new name.
+Settings | F10. Opens the settings window.
+Maximize | F11. Hides the panels, also on the chalkboard. The Restore button can be hidden in settings; then press F11 to return.
+
+
+5. Right panel
+
+Color | Press Ctrl+D or Ctrl+F, then the number of the color. Custom colors have no shortcut; use presets.
+Line width | Shift+scroll wheel. Applies to lines, shape outlines, text size, marker size and more.
+Marker | See the marker tool
+Grid style | See the grid tool
+
+[Layers]
+
+Layers keep drawings apart so that one does not interfere with another.
+- Ctrl+C copies everything visible, leaving out hidden layers.
+- Drag ≡ to change the order.
+- Press x on a layer to delete it.
+- Drawings on higher layers appear above lower ones.
+
+Add layer | Ctrl+'+'  or  Ctrl+J
+Select layer | Ctrl+T, Ctrl+G  or  Alt+], Alt+[
+Move layer up or down | Ctrl+], Ctrl+[
+Hide layer | Ctrl+'-'  or  Ctrl+H
+
+
+6. Settings
+
+Most settings are explained above, so only the rest is covered here.
+
+◆ Toolbar labels
+Show names or shortcuts on the buttons. Once you know the buttons, shortcuts are convenient.
+
+◆ Whiteboard
+Chooses the background color of the whiteboard from the capture menu.
+
+◆ Laser
+Registering a preset every time just for a quick briefing is a nuisance, so a fixed red, fixed width laser is provided.
+- Choose here if you want another color.
+- With the current color and width, saving them as presets is handy.
+
+◆ Grid
+- Cell size: the size of one cell.
+- Checkbox: whether the header bars of the headers style are included when copying.
+
+◆ Show defaults
+Shows each default next to its setting, so you can experiment and go back.
+
+◆ Floating image
+Adds an outline to the floating image so it stands out from the background.
+
+◆ Save quality
+The default is 95: little visible difference, much smaller files. 100 makes files much larger.
+
+◆ Shortcuts
+Right-click a shortcut box to reset it to the default.
+
+◆ About tab
+Shows the maker, the camera shutter sound and the free icon licenses.
+
+
+7. Other shortcuts
+
+Shortcuts not shown on a button or explained above.
+
+Ctrl+W | Close window
+
+
+8. Floating image window (Win+Alt+V)
+
+Shows the image on the clipboard at its own size in a window with no panels.
+- Keep a capture on screen while you copy information from it.
+- For example, capture a password hint that flashes by in a game, then keep it on screen.
+
+Drag | Move the window
+Double-click | Turn "keep on top" off or on again
+Right-click | Close
+Mouse wheel | Zoom
+Wheel drag | Pan the zoomed image
+Drag the edge | Resize the window
